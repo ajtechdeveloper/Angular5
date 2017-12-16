@@ -40,6 +40,7 @@ export class SchedulesComponent implements OnInit {
   scheduleText: string = 'A schedule';
   schedules = [];
   tasks: any
+  memberId: number;
 
   constructor(private route: ActivatedRoute,private router: Router, private _information: InformationService) { 
     this.route.params.subscribe(res => console.log(res.id));
@@ -50,6 +51,7 @@ export class SchedulesComponent implements OnInit {
     this.itemCount = this.schedules.length;
     this._information.changeSchedule(this.schedules);
     this._information.task.subscribe(res => this.tasks = res);
+    this.route.params.subscribe(res => this.memberId = res.id);
   }
 
   addSchedule() {

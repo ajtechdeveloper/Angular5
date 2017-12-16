@@ -9,7 +9,7 @@ const routes: Routes = [
     component: TasksComponent
   },
   {
-    path: 'schedules',
+    path: 'schedules/:id',
     component: SchedulesComponent
   }
 ];

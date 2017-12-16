@@ -23,15 +23,19 @@
   </div>
 
   <p>
-    <strong>Your Tasks</strong>
+    <strong>Member ID:</strong> {{ memberId }}
   </p>
-  
-  <ul>
-    <li *ngFor="let task of tasks">
-      {{ task }}
-    </li>
-  </ul>
+  <div class="container color-dark">
+  <p>Your Tasks</p>
+  </div>
+  <div class="container color-light">
+    <div class="col">
+      <p class="normal-container" *ngFor="let task of tasks;">
+        {{ task }}
+      </p>
+      </div>
+  </div>
 
   <p>
-    <a href="" (click)="sendMeHome()"><strong>Back to Tasks</strong></a>.
+    <a href="" (click)="sendMeHome()"><strong>Back to Tasks and Reset</strong></a>.
   </p>
