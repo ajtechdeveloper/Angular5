@@ -1,0 +1,37 @@
+<div class="container color-dark">
+  <div class="col">
+    <p>Add a Schedule</p>
+  </div>
+  <div class="col">
+    <p>Your Schedules ({{ itemCount }})</p>
+    </div>
+</div>
+
+<div class="container color-light" [@schedules]="schedules.length">
+    <div class="col">
+      <p class="sm">Add a new Schedule.</p>
+        <form>
+          <input type="text" class="txt" name="item" placeholder="Schedule.." [(ngModel)]="scheduleText">
+          <input type="submit" class="btn" value="{{ btnText }}" (click)="addSchedule()">
+        </form>
+    </div>
+    <div class="col">
+      <p class="schedule-container" *ngFor="let schedule of schedules; let i = index" (click)="removeSchedule(i)">
+        {{ schedule }}
+      </p>
+      </div>
+  </div>
+
+  <p>
+    <strong>Your Tasks</strong>
+  </p>
+  
+  <ul>
+    <li *ngFor="let task of tasks">
+      {{ task }}
+    </li>
+  </ul>
+
+  <p>
+    <a href="" (click)="sendMeHome()"><strong>Back to Tasks</strong></a>.
+  </p>

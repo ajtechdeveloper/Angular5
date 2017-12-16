@@ -1,0 +1,24 @@
+<div class="container color-dark">
+  <div class="col">
+    <p>Add a Task</p>
+  </div>
+  <div class="col">
+    <p>Your Tasks ({{ itemCount }})</p>
+    </div>
+</div>
+
+<div class="container color-light" [@tasks]="tasks.length">
+    <div class="col">
+      <p class="sm">Add a new Task.</p>
+        <form>
+          <input type="text" class="txt" name="item" placeholder="Task.." [(ngModel)]="taskText">
+          <input type="submit" class="btn" value="{{ btnText }}" (click)="addTask()">
+        </form>
+    </div>
+    <div class="col">
+      <p class="task-container" *ngFor="let task of tasks; let i = index" (click)="removeTask(i)">
+        {{ task }}
+      </p>
+      </div>
+  </div>
+
