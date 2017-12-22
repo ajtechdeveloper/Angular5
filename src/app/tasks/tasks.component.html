@@ -12,7 +12,7 @@
       <p class="sm">Add a new Task.</p>
         <form>
           <input type="text" class="txt" name="item" placeholder="Task.." [(ngModel)]="taskText">
-          <input type="submit" class="btn" value="{{ btnText }}" (click)="addTask()">
+          <input type="submit" class="btn" [value]="btnText" (click)="addTask()">
         </form>
     </div>
     <div class="col">
